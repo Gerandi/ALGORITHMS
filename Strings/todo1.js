@@ -72,7 +72,12 @@ console.log(acronym("Live from New York, it's Saturday Night!"));
 // countNonSpaces("Honey pie, you are driving me crazy") => 29
 // countNonSpaces("Hello world !") => 11
 
+function countNonSpaces(str) {
+  return str.split('').filter(char => char !== ' ').length;
+}
 
+console.log(countNonSpaces("Honey pie, you are driving me crazy")); // 29
+console.log(countNonSpaces("Hello world !")); // 11
 
 // Remove Shorter Strings
 // Create a function that, given an array of strings and a numerical value, returns an array that only contains strings longer than or equal to the given value.
@@ -81,3 +86,14 @@ console.log(acronym("Live from New York, it's Saturday Night!"));
 
 // removeShorterStrings(['Good morning', 'sunshine', 'the', 'Earth', 'says', 'hello'], 4) => ['Good morning', 'sunshine', 'Earth', 'says', 'hello']
 // removeShorterStrings(['There', 'is', 'a', 'bug', 'in', 'the', 'system'], 3) => ['There', 'bug', 'the', 'system']
+
+const removeShorterStrings = (array, value) => {
+  return array.filter(str => str.length >= value);
+};
+
+console.log(removeShorterStrings(['Good morning', 'sunshine', 'the', 'Earth', 'says', 'hello'], 4));
+// => ['Good morning', 'sunshine', 'Earth', 'says', 'hello']
+console.log(removeShorterStrings(['There', 'is', 'a', 'bug', 'in', 'the', 'system'], 3));
+// => ['There', 'bug', 'the', 'system']
+
+
